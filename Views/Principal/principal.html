@@ -1,0 +1,123 @@
+<center>
+  <h2>Principal</h2>
+</center>
+<div class="row">
+  <div class="col s12">
+    <div class="col s12 m1"></div>
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-content black-text">
+         <center><i class="material-icons large">group</i></center>
+         <center>Usuarios Activos</center> 
+         <center class="black-text">
+            <label id="activo">1</label> <label for="">/</label> <label id="noactivo">3</label>
+         </center>        
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-content black-text">
+            <center><i class="material-icons large">archive</i></center>
+            <center>Mat. Faltante</center>  
+            <center class="black-text">
+
+               <label id="activo">100</label> <label for="">/</label> <label id="noactivo">250</label>
+            </center>   
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-content black-text">
+            <center><i class="material-icons large">alarm_off</i></center> 
+            <center>Prestamos Vencidos</center>
+            <center class="black-text">
+               <label id="activo">10</label> <label for="">/</label> <label id="noactivo">100</label>
+            </center>   
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m1"></div>
+  </div>
+</div>
+<div class="col s1"></div>
+<div class="col s10">
+  <div class="input-field col s6">
+    <h5>Alumnos con material prestado</h5>
+  </div>
+  <div class="input-field col s6">
+      <input placeholder="Buscar Codigo de Barras" id="filtrarPrincipal" onkeyup="getPrincipal(1)" type="text">
+      <label for="filtrarPrincipal">Buscar Codigo de Barras</label>
+  </div>
+  <div>
+    <table class="card centered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Material</th>
+          <th>Vencimiento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="filtrarTablePrincipal">
+       
+      </tbody>
+    </table>
+    <ul class="pagination">
+        <div id="paginadorPrincipal"></div>
+    </ul>
+  </div>
+</div>
+<div class="col s1"></div>
+
+<!--Modal Nuevo-->
+
+
+
+<!--Eliminar-->
+<div id="modal10" class="modal">
+    <form method="POST" id="validate" enctype="multipart/form-data" class="col s12">
+      <div class="modal-content">
+          <center>
+              <h5>Entrega de Material</h5>
+          </center>
+          <br>
+          <div class="row">
+              <div class="input-field col s6">
+                  <input placeholder="Codigo de barras" id="codeP" name="codeP" type="number" class="validate" disabled>
+                  <label id="Nombre-error" class="error" for="codeP">Codigo de barras</label>
+              </div>
+              <div class="input-field col s6">
+                  <input placeholder="Material" id="materialP" name="materialP" type="text" class="validate" disabled>
+                  <label id="Nombre-error" class="error" for="materialP">Material</label>
+              </div>
+              <div class="input-field col s6">
+                  <input id="fpP" name="fpP" type="date" class="validate" disabled>
+                  <label id="Nombre-error" class="error" for="fpP">Fecha de Prestamo</label>
+              </div>
+              <div class="input-field col s6">
+                  <input id="fdP" name="fdP" type="date" class="validate" disabled>
+                  <label id="Nombre-error" class="error" for="fdP">Fecha de Vencimiento</label>
+              </div>
+              <div class="input-field col s6">
+                  <input placeholder="Alumno" id="nombreP" name="nombreP" type="text" class="validate" disabled>
+                  <label id="Nombre-error" class="error" for="nombreP">Alumno</label>
+              </div>
+              <div class="input-field col s6">
+                  <input placeholder="Telefono" id="phone" name="phone" type="number" class="validate" disabled>
+                  <label class="error" for="phone">Telefono</label>
+              </div>
+              <div class="input-field col s12">
+                      <textarea id="comentario" name="comentario" class="materialize-textarea"></textarea>
+                      <label for="comentario" id="lblComentario">Comentario</label>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <a id="btnCancelarPrestamo" class="modal-close waves-effect waves-green btn white-text red">Cerrar</a>
+          <a id="btnPrestamoU" class="waves-effect waves-green btn white-text">Prestar</a>
+      </div>
+  </form>
+  </div>

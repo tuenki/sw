@@ -1,0 +1,93 @@
+<center>
+    <h2>Usuarios</h2>
+</center>
+<div class="col s1"></div>
+<div class="col s10">
+    <div class="input-field col s0">
+        <a onclick="restablecerUser();" class="waves-effect waves-light btn modal-trigger" href="#modal1">Nuevo</a>
+    </div>
+    <div class="input-field col s6">
+        <input placeholder="Buscar usuario" id="filtrarUser" onkeyup="getUsers(1)" type="text">
+        <label for="filtrarUser">Buscar usuario</label>
+    </div>
+    <div >
+        <table id="tableUser" class="card centered mdl-data-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Privilegio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="filterTable">
+                
+            </tbody>
+        </table>
+        <ul class="pagination">
+            <div id="paginador"></div>
+        </ul>
+    </div>
+</div>
+<div class="col s1"></div>
+
+<!--Modal Nuevo-->
+<div id="modal1" class="modal">
+    <form method="POST" id="validate" enctype="multipart/form-data" class="col s12">
+        <div class="modal-content">
+            <center>
+                <h5>Usuario</h5>
+            </center>
+            <br>
+            <div class="row">
+                <input id="idU" name="idU" type="text" hidden>
+                <div class="input-field col s6">
+                    <input placeholder="Nombre" id="Nombre" name="Nombre" type="text" class="validate" required
+                        aria-required="true">
+                    <label id="Nombre-error" class="error" for="Nombre">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="usuario" id="usuario" name="usuario" type="text" class="validate" required
+                        aria-required="true">
+                    <label class="error" for="usuario">Usuario</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Contraseña" id="contra" name="contra" type="password" minlength="6">
+                    <label class="error" for="contra">Contraseña</label>
+                </div>
+                <div class="input-field col s6">
+                    <select name="roles" id="roles">
+
+                    </select>
+                    <label for="roles">Privilegio</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a onclick="restablecerUser();" class="modal-close waves-effect waves-green btn white-text red">Cancelar</a>
+            <a onclick="registrarUser();" id="btnlgn" class="waves-effect waves-green btn">Guardar</a>
+        </div>
+    </form>
+</div>
+
+
+
+<!--Eliminar-->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <center>
+            <h5>Eliminar Usuario</h5>
+        </center>
+        <br>
+        <p>Esta seguro de querer ELIMINAR al usuario: <p id="nameD">xxxxxx</p>
+            una vez eliminada esta USUARIO, no se podra recuperar, ademas de eliminar
+            toda la informacion relacionada con este usuario.
+        </p>
+
+        <div class="modal-footer">
+            <label id="insertMessage" class="text-left message"></label>
+            <a class="modal-close waves-effect waves-green btn-flat white-text red">Cancelar</a>
+            <a id="btnDelete" class="modal-close waves-effect waves-green btn-flat">Eliminar</a>
+        </div>
+    </div>

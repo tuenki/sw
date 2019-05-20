@@ -1,0 +1,55 @@
+<center>
+    <h2>Respaldos</h2>
+</center>
+<div class="col s12">
+    <div class="col s12 m1"></div>
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-content black-text">
+                <center><i class="material-icons large">cloud_download</i></center>
+                <center>Descargar Respaldo</center>
+            </div>
+            <div class="card-action">
+                <center><a href="http://inventario-me.serviciostecnologicos.online/Respaldos/backUp">Descargar</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+    </div>
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-content black-text">
+                <center><i class="material-icons large">cloud_upload</i></center>
+                <center>Subir Respaldo</center>
+            </div>
+            <div class="card-action">
+                <center><a class="modal-trigger" href="#modal3">Subir</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m1"></div>
+</div>
+
+<!--Subir-->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <center>
+            <h5>Restaurar bd</h5>
+        </center>
+        <br>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input id="miarchivo" type="file" multiple>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Sube el archivo de restauracion">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <label id="insertMessage" class="text-left message"></label>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text red">Cancelar</a>
+            <a id="btnSubirBack" class="modal-close waves-effect waves-green btn-flat">Continuar</a>
+        </div>
+    </div>
+</div>

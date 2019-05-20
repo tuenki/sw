@@ -1,0 +1,130 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'soberana_titularbold';
+    src: url('font/soberanatitular-bold-webfont.eot');
+    src: local('☺'),
+         url('font/soberanatitular-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/soberanatitular-bold-webfont.woff') format('woff'),
+         url('font/soberanatitular-bold-webfont.ttf') format('truetype'),
+         url('font/soberanatitular-bold-webfont.svg#soberana_titularbold') format('svg');
+}
+@font-face {
+    font-family: 'soberana_sansregular';
+    src: url('font/soberanasans-regular-webfont.eot');
+    src: local('☺'),
+         url('font/soberanasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/soberanasans-regular-webfont.woff') format('woff'),
+         url('font/soberanasans-regular-webfont.ttf') format('truetype'),
+         url('font/soberanasans-regular-webfont.svg#soberana_sansregular') format('svg');
+}
+body 
+{
+   background: #fafafa;
+   color: #2F2F2F;
+   font: 1em "soberana_sansregular", Calibri, sans-serif;
+}
+.cuerpo_body{
+    margin: 16px auto 0;
+    width: 980px;
+}
+.header{
+    height: 100px;
+    padding: 6px 16px;
+    width: 980px;
+}
+
+.contenido {
+    margin-top: -20px;
+}
+.logos
+{
+    height: 80px;  
+    width: 980px;    
+}
+.logo_sep_nombre_tec
+{    
+    float:left; 
+    width: 750px;
+}
+.logo_sep_nombre_tec .logo_sep
+{
+    float: left;   
+}
+.logo_sep_nombre_tec .nombre 
+{       
+    float: right;    
+    margin-top: 25px;
+    padding: 5px;
+    width: 500px;
+}
+.nombre label
+{
+    font: 18px "soberana_titularbold", Calibri, sans-serif;
+    color:#98979C;  
+}
+.logo_dgest_tec
+{
+    float:right;  
+    padding: 16px 0px;
+}
+.logo_dgest_tec a 
+{
+	padding-top: 5px;
+	padding-right: 8px;
+	padding-bottom: 6px;
+	padding-left: 8px;
+}
+.group:after 
+{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+    margin-bottom: 50px;
+}
+.pie{
+    margin-top: 10px;
+	background: #fafafa;
+	color: #98979C;
+	font-family: "soberana_sansregular", Calibri, sans-serif;
+	font-size: .90em;
+}
+.slider-show{width: 980px;height: 340px;}
+.sidenav{
+    top: 0;
+    margin: 0;
+    height: calc(100% + 60px);
+    background-color: #ffff;
+    overflow-y: auto;
+    will-change: transform;
+}
+
+.message
+{
+    color: red;
+}
+.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+  }
+
+@media(max-width:1024px)
+{
+    .sidenav{
+        display: none;
+    }
+}
+@media(min-width: 800px)
+{
+    .sidenav{
+        max-width: 20%;
+        display: block;
+        margin-top: 70px;
+        transform: translateX(0px);
+    }
+}

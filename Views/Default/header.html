@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="http://inventario-me.serviciostecnologicos.online/Resources/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="http://inventario-me.serviciostecnologicos.online/Resources/css/style.css">
+    <link rel="stylesheet" href="http://inventario-me.serviciostecnologicos.online/Resources/css/material.min.css">
+    <link rel="stylesheet" href="http://inventario-me.serviciostecnologicos.online/Resources/css/dataTables.material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="grey lighten-4">
+    <nav class="nav navbar-fixed">
+        <div class="nav-wrapper blue darken-4">
+            <a class="brand-logo center">
+                <i class="material-icons"></i>
+                Tecnológico Nacional de México
+            </a>
+            <a class="right">
+                <p id="name1" class="white-text name" style="margin-left:15px; margin-right:15px;">.</p>
+            </a>
+            <div id="menuNavbar">
+                <a href="#" id="btnMenu" class="sidenav-trigger" onclick="mostrar();" data-target="menu-side">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col s12 m4 l3">
+            <ul class="sidenav" id="menu-side" style="margin-top:64px;">
+                <li>
+                    <div class="user-view">
+                        <center>
+                            <div class="background" style="bottom:auto;">
+                                <img src="http://inventario-me.serviciostecnologicos.online/Resources/images/logoITAP.png" width="75%">
+                            </div>
+                            <label id="" class="black-text name"></label>
+                            <label id="" class="black-text mail"></label>
+                        </center>
+                    </div>
+                </li>
+                <center style="margin-top:150px;">Instituto Tecnólogico</center>
+                <center>de</center>
+                <center>Agua Prieta</center>
+                <li id="enlace1" style="margin-top: 20px;"><a href="/Principal/principal"
+                        class="waves-effect waves" id="e1">
+                        <i id="i1" class="material-icons">home</i>Inicio </a></li>
+                <li id="enlace2"><a href="/Inventario/inventario" class="waves-effect waves" id="e2"><i
+                            id="i2" class="material-icons">archive</i>Inventario</a></li>
+                <li id="enlace3"><a href="/Usuarios/usuario" class="waves-effect waves" id="e3"><i id="i3"
+                            class="material-icons">person</i>Usuarios</a></li>
+                <li id="enlace4"><a href="/Reportes/reporte" class="waves-effect waves" id="e4"><i id="i4"
+                            class="material-icons">assignment</i>Reportes</a></li>
+                <li id="enlace5"><a href="/Respaldos/respaldo" class="waves-effect waves" id="e5"><i id="i5"
+                            class="material-icons">build</i>Respaldos</a></li>
+                <li>
+                    <a href="/Usuarios/destroySession" onclick="sessionClose();">
+                        <i class="material-icons">exit_to_app</i>
+                        Salir
+                    </a>
+                </li>
+            </ul>
+            <p id="role1" class="black-text mail" style="margin-left:15px; margin-right:15px;">.</p>
+        </div>
+        <div class="col s12 m8 l9">
+            <main>

@@ -1,0 +1,50 @@
+<div class="contenido group">
+    <div class="slider-show">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m3"></div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <div>
+                                <img src="http://inventario-me.serviciostecnologicos.online/Resources/images/logoITAP.png">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <center>
+                                <b>
+                                    Iniciar sesi&oacute;n
+                                </b>
+                            </center>
+                            <form method="POST" id="validate">
+                                <div class="input-field col s12">
+                                    <input id="user" name="user"  type="text" required>
+                                    <label for="user" class="error">Usuario</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="pass" name="pass"  type="password" minlength="6"
+                                        axlength="10" required>
+                                    <label for="pass" class="error">Contraseña</label>
+                                </div>
+                            </form>
+                            <center>
+                                <button onclick="loginuser();" id="btnlgn" class="waves-effect teal darken-4 btn">
+                                    Iniciar sesi&oacute;n
+                                </button>
+                            </center>
+                            <br>
+                            <div id="dErrorL">
+                                <center>
+                                    <label style="font-size:medium; color:white;" id="indexMessage" class="error"></label>
+                                </center>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
