@@ -119,7 +119,8 @@ class QueryManager
         $rutamd="C:\\Users\\jhon\\Desktop>mysqldump";
         $dir = "tmp/".date("ymd-hi").".sql";
 
-        exec("mysqldump -u $u -p'$p' $db > $dir --hex-blob",$output);
+        $cmm="mysqldump --no-tablespaces --host=$s --user=$u --password=$p $db > $dir --hex-blob";
+        exec($cmm,$output);
         if(is_null(@$output[0]))
         {
 
