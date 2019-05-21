@@ -1,0 +1,344 @@
+<center>
+    <h2>Materiales, Registros y Prestamos</h2>
+</center>
+<div class="col s12">
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons">folder_shared</i>
+                Registro de Alumnos
+                <span class="hola badge">+</span></div>
+            <div class="collapsible-body">
+                <div class="input-field col s0">
+                    <a id="nuevoAlumno" class="waves-effect waves-light btn blue darken-3 modal-trigger"
+                        href="#modal1">Nuevo Registro</a>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Buscar Alumno" id="filtrarAlumno" onkeyup="getAlumno(1)" type="text">
+                    <label for="filtrarAlumno">Buscar Alumno</label>
+                </div>
+                <div>
+                    <table class="card centered">
+                        <thead>
+                            <tr>
+                                <th>#Control</th>
+                                <th>Alumno</th>
+                                <th>Carrerar</th>
+                                <th>Telefono</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="filterTableAlumno">
+
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <div id="paginadorAlumno"></div>
+                    </ul>
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons">archive</i>
+                Materiales y Prestamos
+                <span class="badge">+</span></div>
+            <div class="collapsible-body">
+                <div class="input-field col s0">
+                    <a id="nuevoMaterial" class="waves-effect waves-light btn blue darken-3 modal-trigger"
+                        href="#modal2">Nuevo Registro</a>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Buscar Material" id="filtrarMaterial" onkeyup="getArticulo(1)" type="text">
+                    <label for="filtrarMaterial">Buscar Material</label>
+                </div>
+                <div>
+                    <table class="card centered">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Modelo</th>
+                                <th>Categoria</th>
+                                <th>Disponible</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="filterTableMaterial">
+
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <div id="paginadorMaterial"></div>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+   <!-- <div class="fixed-action-btn">
+        <a title="Opciones" class="btn-floating btn-large blue darken-3">
+            <i class="large material-icons">add</i>
+        </a>
+        <ul>
+            <li><a href="#modal5" title="Carreras" class="btn-floating red modal-trigger"><i
+                        class="material-icons">school</i></a></li>
+            <li><a title="Categoria Materiles" class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+            </li>
+        </ul>
+    </div>-->
+</div>
+
+<!--Modal Alumno-->
+<div id="modal1" class="modal">
+    <form method="POST" id="frmAlumno" name="frmAlumno" enctype="multipart/form-data" class="col s12">
+        <div class="modal-content">
+            <center>
+                <h5>Alumno</h5>
+            </center>
+            <br>
+            <div class="row">
+
+                <div class="input-field col s6">
+                    <input placeholder="Nombre" id="Nombre" name="Nombre" type="text" class="validate" required
+                        aria-required="true">
+                    <label id="Nombre-error" class="error" for="Nombre">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Numero de Control" id="NControl" name="NControl" type="text" class="validate"
+                        required>
+                    <label class="error" for="Numero de Control">Numero de Control</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Telefono" id="Telefono" name="Telefono" type="number" minlength="6"
+                        class="validate" required>
+                    <label class="error" for="Telefono">Telefono</label>
+                </div>
+                <div class="input-field col s6">
+                    <select name="carreras" id="carreras">
+
+                    </select>
+                    <label for="carreras">Carrera</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="btnCancelarAlumno" class="modal-close waves-effect waves-green btn white-text red">Cancelar</a>
+            <a id="btnnuevoAlumno" class="waves-effect waves-green btn">Guardar</a>
+        </div>
+    </form>
+</div>
+
+<!--Modal Material-->
+<div id="modal2" class="modal">
+    <form method="POST" id="validate" enctype="multipart/form-data" class="col s12">
+        <div class="modal-content">
+            <center>
+                <h5>Material</h5>
+            </center>
+            <br>
+            <div class="row">
+
+                <div class="input-field col s6">
+                    <input placeholder="Numero de Serie" id="serie" name="serie" type="number" class="validate" required
+                        aria-required="true">
+                    <label id="Nombre-error" class="error" for="serie">#Serie</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Numero de ITAP" id="nitap" name="nitap" type="number" class="validate" required
+                        aria-required="true">
+                    <label class="error" for="nitap">#ITAP</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Numero de RM" id="nRM" name="nRM" type="number" minlength="6" class="validate"
+                        required aria-required="true">
+                    <label class="error" for="nRM">#RM</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Codigo de Barras" id="bc" name="bc" type="number" minlength="6">
+                    <label class="error" for="bc">#Codigo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Modelo" id="modelo" name="modelo" type="text" minlength="6" class="validate"
+                        required aria-required="true">
+                    <label class="error" for="modelo">#Modelo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Ubicacion" id="Ubicacion" name="Ubicacion" type="text" minlength="6"
+                        class="validate" required aria-required="true">
+                    <label class="error" for="Ubicacion">Ubicacion</label>
+                </div>
+                <div class="input-field col s6">
+                    <select name="categorias" id="categorias">
+
+                    </select>
+                    <label for="categorias">Categoria</label>
+                </div>
+                <div class="input-field col s6">
+                    <div class="file-field input-field">
+                        <div class="btn blue darken-3">
+                            <span>Imagen</span>
+                            <input id="imgi" name="imgi" accept="image/x-png,image/jpeg"type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input id="img" name="img" class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn white-text red">Cancelar</a>
+            <a id="btnNuevoArticulo" class="waves-effect waves-green btn">Guardar</a>
+        </div>
+    </form>
+</div>
+
+<!--Modal Info-->
+<div id="modal4" class="modal">
+    <form method="POST" id="validate" enctype="multipart/form-data" class="col s12">
+        <div class="modal-content">
+            <center>
+                <h5>Material en Stock</h5>
+            </center>
+            <br>
+            <div class="row">
+                <div id="nosepuede" hidden>
+                    <center>
+                        <h4>Este material ya se encuentra prestado</h4>
+                    </center>   
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="#Control" id="Icontrol" name="Icontrol" type="number" class="validate" required
+                        aria-required="true">
+                    <label id="Nombre-error" class="error" for="Icontrol"># Control</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Codigo de Barras" id="Ibar" name="Ibar" type="number" disabled>
+                    <label class="error" for="Ibar">Codigo de barras</label>
+                </div>
+
+                <div class="input-field col s12">
+                        <textarea id="comentario" name="comentario" class="materialize-textarea"></textarea>
+                        <label for="comentario" id="lblComentario">Comentario</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="btnCancelarPrestamo" class="modal-close waves-effect waves-green btn white-text red">Cerrar</a>
+            <a id="btnPrestamo" class="waves-effect waves-green btn white-text">Prestar</a>
+        </div>
+    </form>
+</div>
+
+
+
+<!--Eliminar alumno-->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <center>
+            <h5>Eliminar Alumno</h5>
+        </center>
+        <br>
+        <p>Esta seguro de querer ELIMINAR al alumn@ : <div id="nmAlumno">xxxxxx</div>
+        </p>
+        <p>Una vez eliminada esta informacion no se podra recuperar los datos, ademas de eliminar
+            toda la informacion relacionada con el alumn@ .</p>
+
+        <div class="modal-footer">
+            <label id="insertMessage" class="text-left message"></label>
+            <a id="btnCancelarEA" class="modal-close waves-effect waves-green btn-flat white-text red">Cancelar</a>
+            <a id="btnEliminarAlumno" class="modal-close waves-effect waves-green btn-flat">Eliminar</a>
+        </div>
+    </div>
+</div>
+
+<!--Eliminar articulo-->
+<div id="modal7" class="modal">
+        <div class="modal-content">
+            <center>
+                <h5>Eliminar Articulo</h5>
+            </center>
+            <br>
+            <p>Esta seguro de querer ELIMINAR el material: <div id="nCat"><b>xxxxx</b></div></p><p>con codigo: <div id="nCod"><b>xxxx</b></div></p>
+        
+            <p>Una vez eliminada esta informacion no se podra recuperar, ademas de eliminar
+                toda la informacion relacionada con este articulo.</p>
+    
+            <div class="modal-footer">
+                <label id="insertMessage" class="text-left message"></label>
+                <a id="btnCancelarArticulo" class="modal-close waves-effect waves-green btn-flat white-text red">Cancelar</a>
+                <a id="btnEliminarArticulo" class="modal-close waves-effect waves-green btn-flat">Eliminar</a>
+            </div>
+        </div>
+    </div>
+
+<!--Carreras-->
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <center>
+            <h5>Carreras</h5>
+        </center>
+        <br>
+        <div class="input-field col s6">
+            <input placeholder="Buscar Alumno" id="filtrarAlumno" onkeyup="getCarrera(1)" type="text">
+            <label for="filtrarAlumno">Buscar Carrara</label>
+        </div>
+        <div>
+            <table class="card centered">
+                <thead>
+                    <tr>
+                        <th>Carrera</th>
+                    </tr>
+                </thead>
+
+                <tbody id="filterTableCarrera">
+
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <div id="paginadorCarrera"></div>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <label id="insertMessage" class="text-left message"></label>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text red">Cerrar</a>
+        </div>
+    </div>
+</div>
+
+<!--Categorias-->
+<div id="modal6" class="modal">
+    <div class="modal-content">
+        <center>
+            <h5>Categorias</h5>
+        </center>
+        <br>
+        <div class="input-field col s6">
+            <input placeholder="Buscar Alumno" id="filtrarAlumno" onkeyup="getCategoria(1)" type="text">
+            <label for="filtrarAlumno">Buscar Categoria</label>
+        </div>
+        <div>
+            <table class="card centered">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                    </tr>
+                </thead>
+
+                <tbody id="filterTableCat">
+
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <div id="paginadorCat"></div>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <label id="insertMessage" class="text-left message"></label>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text red">Cerrar</a>
+        </div>
+    </div>
+</div>
