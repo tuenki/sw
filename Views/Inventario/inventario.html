@@ -1,5 +1,5 @@
 <center>
-    <h2>Inventario</h2>
+    <h2>Materiales, Registros y Prestamos</h2>
 </center>
 <div class="col s12">
     <ul class="collapsible">
@@ -7,11 +7,11 @@
             <div class="collapsible-header">
                 <i class="material-icons">folder_shared</i>
                 Registro de Alumnos
-                <span class="hola badge">#</span></div>
+                <span class="hola badge">+</span></div>
             <div class="collapsible-body">
                 <div class="input-field col s0">
                     <a id="nuevoAlumno" class="waves-effect waves-light btn blue darken-3 modal-trigger"
-                        href="#modal1">Nuevo</a>
+                        href="#modal1">Nuevo Registro</a>
                 </div>
                 <div class="input-field col s6">
                     <input placeholder="Buscar Alumno" id="filtrarAlumno" onkeyup="getAlumno(1)" type="text">
@@ -23,8 +23,8 @@
                             <tr>
                                 <th>#Control</th>
                                 <th>Alumno</th>
-                                <th>Carrerar</th>
-                                <th>Telefono</th>
+                                <th>Carrera</th>
+                                <th>Teléfono</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -43,12 +43,12 @@
         <li>
             <div class="collapsible-header">
                 <i class="material-icons">archive</i>
-                Materiales
-                <span class="badge">#</span></div>
+                Materiales y Prestamos
+                <span class="badge">+</span></div>
             <div class="collapsible-body">
                 <div class="input-field col s0">
                     <a id="nuevoMaterial" class="waves-effect waves-light btn blue darken-3 modal-trigger"
-                        href="#modal2">Nuevo</a>
+                        href="#modal2">Nuevo Registro</a>
                 </div>
                 <div class="input-field col s6">
                     <input placeholder="Buscar Material" id="filtrarMaterial" onkeyup="getArticulo(1)" type="text">
@@ -58,7 +58,7 @@
                     <table class="card centered">
                         <thead>
                             <tr>
-                                <th>Codigo</th>
+                                <th>Código</th>
                                 <th>Modelo</th>
                                 <th>Categoria</th>
                                 <th>Disponible</th>
@@ -78,7 +78,7 @@
         </li>
     </ul>
 
-   <!-- <div class="fixed-action-btn">
+   <div class="fixed-action-btn">
         <a title="Opciones" class="btn-floating btn-large blue darken-3">
             <i class="large material-icons">add</i>
         </a>
@@ -88,7 +88,7 @@
             <li><a title="Categoria Materiles" class="btn-floating blue"><i class="material-icons">attach_file</i></a>
             </li>
         </ul>
-    </div>-->
+    </div>
 </div>
 
 <!--Modal Alumno-->
@@ -107,12 +107,12 @@
                     <label id="Nombre-error" class="error" for="Nombre">Nombre</label>
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="Numero de Control" id="NControl" name="NControl" type="number" class="validate"
+                    <input placeholder="Numero de Control" id="NControl" name="NControl" type="text" class="validate"
                         required>
                     <label class="error" for="Numero de Control">Numero de Control</label>
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="Telefono" id="Telefono" name="Telefono" type="number" minlength="6"
+                    <input placeholder="Teléfono" id="Telefono" name="Telefono" type="number" minlength="6"
                         class="validate" required>
                     <label class="error" for="Telefono">Telefono</label>
                 </div>
@@ -157,7 +157,7 @@
                     <label class="error" for="nRM">#RM</label>
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="Codigo de Barras" id="bc" name="bc" type="number" minlength="6">
+                    <input placeholder="Código de Barras" id="bc" name="bc" type="number" minlength="6">
                     <label class="error" for="bc">#Codigo</label>
                 </div>
                 <div class="input-field col s6">
@@ -201,7 +201,7 @@
     <form method="POST" id="validate" enctype="multipart/form-data" class="col s12">
         <div class="modal-content">
             <center>
-                <h5>Material</h5>
+                <h5>Material en Stock</h5>
             </center>
             <br>
             <div class="row">
@@ -211,12 +211,12 @@
                     </center>   
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="Alumno" id="Icontrol" name="Icontrol" type="number" class="validate" required
+                    <input placeholder="#Control" id="Icontrol" name="Icontrol" type="number" class="validate" required
                         aria-required="true">
-                    <label id="Nombre-error" class="error" for="Icontrol">Alumno</label>
+                    <label id="Nombre-error" class="error" for="Icontrol"># Control</label>
                 </div>
                 <div class="input-field col s6">
-                    <input placeholder="Codigo de Barras" id="Ibar" name="Ibar" type="number" disabled>
+                    <input placeholder="Código de Barras" id="Ibar" name="Ibar" type="number" disabled>
                     <label class="error" for="Ibar">Codigo de barras</label>
                 </div>
 
@@ -242,10 +242,10 @@
             <h5>Eliminar Alumno</h5>
         </center>
         <br>
-        <p>Esta seguro de querer ELIMINAR al alumno: <div id="nmAlumno">xxxxxx</div>
+        <p>Esta seguro de querer ELIMINAR al alumn@ : <div id="nmAlumno">xxxxxx</div>
         </p>
-        <p>Una vez eliminada esta informacion, no se podra recuperar, ademas de eliminar
-            toda la informacion relacionada con este alumno.</p>
+        <p>Una vez eliminada esta informacion no se podra recuperar los datos, ademas de eliminar
+            toda la informacion relacionada con el alumn@ .</p>
 
         <div class="modal-footer">
             <label id="insertMessage" class="text-left message"></label>
@@ -264,7 +264,7 @@
             <br>
             <p>Esta seguro de querer ELIMINAR el material: <div id="nCat"><b>xxxxx</b></div></p><p>con codigo: <div id="nCod"><b>xxxx</b></div></p>
         
-            <p>Una vez eliminada esta informacion, no se podra recuperar, ademas de eliminar
+            <p>Una vez eliminada esta informacion no se podra recuperar, ademas de eliminar
                 toda la informacion relacionada con este articulo.</p>
     
             <div class="modal-footer">
@@ -275,13 +275,21 @@
         </div>
     </div>
 
-<!--Carreras-->
+<!--modal carreras Carreras-->
 <div id="modal5" class="modal">
     <div class="modal-content">
         <center>
             <h5>Carreras</h5>
         </center>
         <br>
+        <div class="input-field col s6">
+            <input placeholder="Nombre completo" id="nombrecompleto" name="nombrecompleto" type="text">
+            <label class="error" for="nombrecompleto">Nombre Completo</label>
+        </div>
+        <div class="input-field col s6">
+            <input placeholder="Nombre corto" id="nombrecorto" name="nombrecorto" type="text">
+            <label class="error" for="nombrecorto">Nombre Corto</label>
+        </div>
         <div class="input-field col s6">
             <input placeholder="Buscar Alumno" id="filtrarAlumno" onkeyup="getCarrera(1)" type="text">
             <label for="filtrarAlumno">Buscar Carrara</label>
