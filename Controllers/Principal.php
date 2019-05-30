@@ -38,14 +38,14 @@ class Principal extends Controllers
                     <td>".$value["name"]."</td>
                     <td>".$value["fecha_vencido"]."</td>
                     <td>
-                        <button onclick='dataPrestamo(".$datauser.");' class='btn-floating green darken-3 waves-effect waves-light modal-trigger' href='#modal10'><i class='material-icons'>check</i></button>
+                        <button title='Prestamo' onclick='dataPrestamo(".$datauser.");' class='btn-floating green darken-3 waves-effect waves-light modal-trigger' href='#modal10'><i class='material-icons'>check</i></button>
                     </td>
                 </tr>
                                
                 ";
                 $count++;
             }
-            $paginador= "<p>Resiltados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
+            $paginador= "<p>Resultados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
             echo json_encode(array("dataFilter"=>$table,"paginador"=>$paginador));         
         } 
         else 

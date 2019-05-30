@@ -40,15 +40,15 @@ class Inventario extends Controllers
                     <td>".$value["short_name"]."</td>
                     <td>".$value["phone"]."</td>
                     <td>
-                        <button onclick='dataAlumno(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal1'><i class='material-icons'>edit</i></button>
-                        <button onclick='deleteAlumno(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal3'><i class='material-icons'>clear</i></button>
+                        <button title='Modificación' onclick='dataAlumno(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal1'><i class='material-icons'>edit</i></button>
+                        <button title='Eliminar' onclick='deleteAlumno(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal3'><i class='material-icons'>clear</i></button>
                     </td>
                 </tr>
                                
                 ";
                 $count++;
             }
-            $paginador= "<p>Resiltados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
+            $paginador= "<p>Resultados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
             echo json_encode(array("dataFilter"=>$table,"paginador"=>$paginador));         
         } 
         else 
@@ -80,6 +80,7 @@ class Inventario extends Controllers
             "career"=>$_POST['career'],
             "phone"=>$_POST['phone']
         );
+        
         $data=$this->model->insertAlumno($array);
         if($data==0)
         {
@@ -146,9 +147,9 @@ class Inventario extends Controllers
                     <td>".$value["name"]."</td>
                     <td>".$alert."</td>
                     <td>
-                    <button onclick='dataNewPrestamo(".$datauser.");' class='btn-floating blue waves-effect waves-light modal-trigger' href='#modal4'><i class='material-icons'>insert_drive_file</i></button>
-                        <button onclick='dataMaterial(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal2'><i class='material-icons'>edit</i></button>
-                        <button onclick='deleteMaterial(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal7'><i class='material-icons'>clear</i></button>
+                    <button id='dataNewPrestamo' title='Prestar' onclick='dataNewPrestamo(".$datauser.");' class='btn-floating blue waves-effect waves-light modal-trigger' href='#modal4'><i class='material-icons'>insert_drive_file</i></button>
+                        <button id='dataMaterial' title='Modificación' onclick='dataMaterial(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal2'><i class='material-icons'>edit</i></button>
+                        <button id='ElM' title='Eliminar' onclick='deleteMaterial(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal7'><i class='material-icons'>clear</i></button>
                     </td>
                 </tr>
                                

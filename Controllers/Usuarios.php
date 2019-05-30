@@ -55,15 +55,15 @@ class Usuarios extends Controllers
                     <td>".$value["user"]."</td>
                     <td>".$value["privilegio"]."</td>
                     <td>
-                        <button onclick='dataUser(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal1'><i class='material-icons'>edit</i></button>
-                        <button onclick='deleteUser(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal3'><i class='material-icons'>clear</i></button>
+                        <button title='Modificar' onclick='dataUser(".$datauser.");' class='btn-floating yellow darken-3 waves-effect waves-light modal-trigger' href='#modal1'><i class='material-icons'>edit</i></button>
+                        <button title='Eliminar' onclick='deleteUser(".$datauser.");' class='btn-floating deep-orange accent-4 waves-effect waves-light modal-trigger' href='#modal3'><i class='material-icons'>clear</i></button>
                     </td>
                 </tr>
                                
                 ";
                 $count++;
             }
-            $paginador= "<p>Resiltados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
+            $paginador= "<p>Resultados".$data["pagi_info"]."</p><p>".$data["pagi_navegacion"]."</p>";
             echo json_encode(array("dataFilter"=>$table,"paginador"=>$paginador));         
         } 
         else 

@@ -27,7 +27,7 @@ class Respaldos extends Controllers
     
     public function backUp()
     {
-        $this->model->backUp();    
+       $this->model->backUp();    
     }
 
     public function restore()

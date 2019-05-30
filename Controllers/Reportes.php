@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/Libraries/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/inventario/Libraries/vendor/autoload.php";
 class Reportes extends Controllers
 {
     function __construct()
@@ -41,7 +41,7 @@ class Reportes extends Controllers
     public function codeBar()
     {
         $html="";
-        $url="http://inventario-me.serviciostecnologicos.online/Libraries/php-barcode-master/barcode.php";
+        $url="http://localhost/inventario/Libraries/php-barcode-master/barcode.php";
         $response = $this->model->getOnlyBarCode();
         $array=$response['result'];
         foreach ($array as $key => $value) 
@@ -98,7 +98,7 @@ class Reportes extends Controllers
                 }
                 else
                 {
-                    $prestado="Almacen";
+                    $prestado="Almacén";
                 }
                 $tr.="
                 <tr>
@@ -112,7 +112,7 @@ class Reportes extends Controllers
             }
             $cont = count($array);
         }
-        $style=file_get_contents($_SERVER['DOCUMENT_ROOT'].'/Resources/plantillaparaReporte/example3/style.css');
+        $style=file_get_contents($_SERVER['DOCUMENT_ROOT'].'/inventario/Resources/plantillaparaReporte/example3/style.css');
         $html='<body>
         <main>
           <h1  class="clearfix">'.$title.'</h1>
