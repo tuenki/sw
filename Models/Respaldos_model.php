@@ -8,7 +8,7 @@ class Respaldos_model extends Conexion
 
     function backUp()
     {
-      $this->db->backup2();
+        $this->db->backup();
     }
 
     function restore($location)
